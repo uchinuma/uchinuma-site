@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+  --color-bg: #fafaf9;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b6b6b;
+  --color-accent: #2d2d2d;
+  --color-border: #e5e5e5;
+  --color-link: #1a1a1a;
+  --color-link-hover: #555;
+  --font-sans: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-width: 680px;
+  --spacing-unit: 1.5rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  border-bottom-color: var(--color-link-hover);
+}
+
+/* ─── Layout ─── */
+
+.site-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem var(--spacing-unit) 6rem;
+}
+
+/* ─── Header / Nav ─── */
+
+.site-header {
+  margin-bottom: 4rem;
+}
+
+.site-title {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.site-title a {
+  border-bottom: none;
+}
+
+.site-nav {
+  margin-top: 0.75rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  border-bottom: none;
+  letter-spacing: 0.04em;
+}
+
+.site-nav a:hover,
+.site-nav a.is-active {
+  color: var(--color-text);
+}
+
+/* ─── Page Title ─── */
+
+.page-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Sections ─── */
+
+.section {
+  margin-bottom: 3.5rem;
+}
+
+.section-heading {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.subsection-heading {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.subsection-heading:first-of-type {
+  margin-top: 0;
+}
+
+.site-title-en {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+/* ─── Introduction ─── */
+
+.intro {
+  margin-bottom: 3.5rem;
+}
+
+.intro p {
+  font-size: 1rem;
+  max-width: 560px;
+}
+
+/* ─── Lists ─── */
+
+.item-list {
+  list-style: none;
+}
+
+.item-list li {
+  padding: 0.4rem 0;
+}
+
+.item-list li + li {
+  border-top: 1px solid var(--color-border);
+}
+
+.item-label {
+  font-weight: 400;
+}
+
+.item-meta {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ─── Company List ─── */
+
+.company-list {
+  list-style: none;
+}
+
+.company-list li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.company-role {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* ─── Book List ─── */
+
+.book-list {
+  list-style: none;
+}
+
+.book-list li {
+  padding: 0.6rem 0;
+}
+
+.book-list li + li {
+  border-top: 1px solid var(--color-border);
+}
+
+.book-title {
+  font-weight: 400;
+}
+
+.book-detail {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ─── Book Cards (with cover) ─── */
+
+.book-cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 2px;
+  background-color: var(--color-border);
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
+}
+
+.book-card:hover .book-card-cover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.book-card a {
+  border-bottom: none;
+}
+
+.book-card-title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.book-card-detail {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+  line-height: 1.5;
+}
+
+/* ─── SNS / Links Row ─── */
+
+.link-row {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.link-row a {
+  font-size: 0.9rem;
+}
+
+/* ─── Works / Portfolio ─── */
+
+.works-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.work-item {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.work-item:last-child {
+  border-bottom: none;
+}
+
+.work-year {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.work-title {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+
+.work-description {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ─── News ─── */
+
+.news-list {
+  list-style: none;
+}
+
+.news-list li {
+  padding: 1rem 0;
+}
+
+.news-list li + li {
+  border-top: 1px solid var(--color-border);
+}
+
+.news-date {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.news-title {
+  font-weight: 400;
+  margin-top: 0.15rem;
+}
+
+/* ─── Profile ─── */
+
+.profile-section {
+  margin-bottom: 3rem;
+}
+
+.profile-section p {
+  max-width: 560px;
+}
+
+.profile-text {
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+.bio-versions {
+  list-style: none;
+}
+
+.bio-versions li {
+  padding: 1rem 0;
+}
+
+.bio-versions li + li {
+  border-top: 1px solid var(--color-border);
+}
+
+.bio-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.bio-content {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  max-width: 560px;
+}
+
+.timeline {
+  list-style: none;
+}
+
+.timeline li {
+  padding: 0.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.timeline-year {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  min-width: 3.5rem;
+}
+
+/* ─── Contact ─── */
+
+.contact-list {
+  list-style: none;
+}
+
+.contact-list li {
+  padding: 0.35rem 0;
+}
+
+/* ─── Footer ─── */
+
+.site-footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 600px) {
+  .site-wrapper {
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  .site-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .company-list li {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .timeline li {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .book-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
